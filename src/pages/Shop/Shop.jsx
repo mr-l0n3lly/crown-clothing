@@ -1,6 +1,7 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
-import ShopData from './Shop.data.js';
+import ShopData from './Shop.data';
 import PreviewCollection from '../../components/PreviewCollection/PreviewCollection';
 
 class ShopPage extends React.Component {

@@ -17,6 +17,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 		return;
 	}
 
+	// eslint-disable-next-line no-use-before-define
 	const userRef = firestore.doc(`users/${userAuth.uid}`);
 
 	const snapshot = await userRef.get();

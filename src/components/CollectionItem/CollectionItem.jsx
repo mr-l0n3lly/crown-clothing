@@ -2,8 +2,9 @@ import React from 'react';
 
 import './CollectionItem.scss';
 
+// eslint-disable-next-line react/prop-types
 const CollectionItem = ({ id, name, price, imageUrl }) => (
-	<div className="collection-item">
+	<div key={id} className="collection-item">
 		<div
 			className="image"
 			style={{

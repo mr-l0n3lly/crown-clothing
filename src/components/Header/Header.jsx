@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { auth } from '../../firebase/firebase.utils';
@@ -19,7 +21,14 @@ const Header = ({ currentUser }) => (
 			</Link>
 			<Link className="option" to="/sign">
 				{currentUser ? (
-					<div className="option" onChange={auth.signOut}>
+					// eslint-disable-next-line jsx-a11y/no-static-element-interactions
+					<div
+						className="option"
+						// eslint-disable-next-line no-unused-vars
+						onClick={(_e) => {
+							auth.signOut();
+						}}
+					>
 						SIGN OUT
 					</div>
 				) : (

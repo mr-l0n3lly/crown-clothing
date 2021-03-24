@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 
 import MenuItem from '../MenuItem/MenuItem';
@@ -47,15 +48,17 @@ class Directory extends Component {
 
 	render() {
 		return (
+			// eslint-disable-next-line react/jsx-no-comment-textnodes
 			<div className="directory-menu">
-				{this.state.sections.map((section) => (<MenuItem
-									key={ section.id }
-									title={ section.title }
-									imageUrl={ section.imageUrl }
-									size={ section.size }
-									linkUrl={ section.linkUrl } 
-								/>))
-				})}
+				{this.state.sections.map((section) => (
+					<MenuItem
+						key={section.id}
+						title={section.title}
+						imageUrl={section.imageUrl}
+						size={section.size}
+						linkUrl={section.linkUrl}
+					/>
+				))}
 			</div>
 		);
 	}
