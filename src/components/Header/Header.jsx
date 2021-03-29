@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { auth } from '../../firebase/firebase.utils';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
+import CartIcon from '../CartIcon/CartIcon.component';
+import Cart from '../Cart/Cart.component';
 
 import './Header.scss';
 
@@ -20,7 +22,6 @@ const Header = ({ currentUser }) => (
 			<Link className="option" to="/shop">
 				CONTACT
 			</Link>
-
 			{currentUser ? (
 				// eslint-disable-next-line jsx-a11y/no-static-element-interactions
 				<div
@@ -37,7 +38,9 @@ const Header = ({ currentUser }) => (
 					SIGN IN
 				</Link>
 			)}
+			<CartIcon />
 		</div>
+		<Cart />
 	</div>
 );
 
