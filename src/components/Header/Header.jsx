@@ -8,6 +8,8 @@ import { ReactComponent as Logo } from '../../assets/crown.svg';
 import CartIcon from '../CartIcon/CartIcon.component';
 import Cart from '../Cart/Cart.component';
 
+import { selectCurrentUser } from '../../redux/user/user.selectors';
+
 import './Header.scss';
 
 const Header = ({ currentUser, hidden }) => (
@@ -45,7 +47,7 @@ const Header = ({ currentUser, hidden }) => (
 );
 
 const mapStateToProps = (state) => ({
-	currentUser: state.user.currentUser,
+	currentUser: selectCurrentUser(state),
 	hidden: state.cart.hidden,
 });
 
